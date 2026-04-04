@@ -1,3 +1,12 @@
+---
+title: SmartCity Traffic Control
+emoji: 🚦
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8000
+---
+
 # SmartCity Autonomous Traffic Control
 ## OpenEnv Environment with Predictive Intelligence & Emergency Prioritization
 
