@@ -1,0 +1,16 @@
+[project]
+name = "smartcity-traffic-control"
+version = "1.0.0"
+description = "SmartCity Autonomous Traffic Control OpenEnv Environment with Emergency Prioritization and Predictive Flow Optimization."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core>=0.2.0",
+    "fastapi",
+    "uvicorn",
+    "openai",
+    "pydantic"
+]
+
+[project.scripts]
+server = "server.app:main"

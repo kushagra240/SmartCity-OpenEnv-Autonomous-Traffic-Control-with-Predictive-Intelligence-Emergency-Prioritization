@@ -1,0 +1,35 @@
+name: "smartcity-traffic-control"
+description: >
+  SmartCity Autonomous Traffic Control OpenEnv Environment
+  with Emergency Prioritization and Predictive Flow Optimization.
+version: "1.0.0"
+tasks:
+  - id: "task_1"
+    name: "Basic Flow Optimization"
+    description: "Stable traffic flow. Goal: minimize average wait time."
+    entrypoint: "/step"
+  - id: "task_2"
+    name: "Rush Hour Imbalance"
+    description: "Uneven inflow. Goal: balance queues efficiently."
+    entrypoint: "/step"
+  - id: "task_3"
+    name: "Emergency + Chaos"
+    description: "Emergency vehicles appear alongside random traffic spikes."
+    entrypoint: "/step"
+api:
+  reset: "/reset"
+  step: "/step"
+  state: "/state"
+schema:
+  observation:
+    lanes: "Dict[str, LaneStats] (N, S, E, W)"
+    current_phase: "String (NS_GREEN, EW_GREEN)"
+    time_since_last_switch: "Integer (seconds)"
+    predicted_inflow: "Dict[str, List[int]] (Next 5 steps)"
+  action:
+    phase: "String (NS_GREEN, EW_GREEN)"
+    duration: "Integer (1-60s)"
+    emergency_override: "Boolean"
+  reward:
+    total: "Float"
+    breakdown: "Dict (Wait, Queue, Throughput, Emergency, Starvation)"
