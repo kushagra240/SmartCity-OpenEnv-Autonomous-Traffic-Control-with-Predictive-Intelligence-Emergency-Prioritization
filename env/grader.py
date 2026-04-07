@@ -33,4 +33,6 @@ class Grader:
             self.w_starve * norm_starve # 0.1
         )
         
-        return round(max(0.0, min(1.0, float(score))), 4)
+        # Round first, then clamp to ensure it's strictly within (0, 1)
+        score_val = round(float(score), 4)
+        return max(0.0001, min(0.9999, score_val))

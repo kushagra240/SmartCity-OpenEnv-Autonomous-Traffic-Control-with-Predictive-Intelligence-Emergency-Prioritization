@@ -93,7 +93,7 @@ async def run_task(client: OpenAI, task_id: int):
         
         total_reward = sum(rewards)
         score = total_reward / MAX_TOTAL_REWARD if MAX_TOTAL_REWARD > 0 else 0.0
-        score = min(max(score, 0.0), 1.0)
+        score = min(max(score, 0.0001), 0.9999)
         success = score >= SUCCESS_SCORE_THRESHOLD
         
     finally:

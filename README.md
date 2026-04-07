@@ -67,9 +67,9 @@ Ensure you export `OPENAI_API_KEY` before running inference.
 ## Baseline Scores
 Because this system heavily penalizes simple static models (e.g. models just blindly holding green lights without reading state), our dummy baseline agent (which simply pulses NS_GREEN) fails the evaluation. It serves as a strong 0.0 floor.
 
-- **Task 1 Baseline:** ~0.00
-- **Task 2 Baseline:** ~0.00
-- **Task 3 Baseline:** ~0.00
+- **Task 1 Baseline:** ~0.01
+- **Task 2 Baseline:** ~0.01
+- **Task 3 Baseline:** ~0.01
 
 Advanced autonomous agents (tested experimentally) typically achieve >0.5 scores by adapting to dynamic inflow and executing immediate emergency overrides.
 
