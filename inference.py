@@ -11,7 +11,7 @@ from env.models import Action, SignalPhase
 # Mandatory Configuration
 API_BASE_URL = os.getenv("API_BASE_URL") or "https://router.huggingface.co/v1"
 MODEL_NAME = os.getenv("MODEL_NAME") or "gpt-4o-mini"
-HF_TOKEN = os.getenv("HF_TOKEN") or os.getenv("API_KEY", "dummy_key")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 BENCHMARK = "smartcity-traffic-control"
 MAX_STEPS = 20 # Baseline restriction for speed
